@@ -25,6 +25,12 @@ public class ProductServiceImplementation implements ProductService  {
     }
 
     @Override
+    public Product getProductById(Long productID) {
+        return productRepository.findById(productID).orElse(null);
+    }
+
+
+    @Override
     public Product updateProduct(Product product, Long productId) {
         Product prodDB
                 = productRepository.findById(productId).get();
